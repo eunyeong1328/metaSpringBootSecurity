@@ -38,7 +38,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter { //security 관�
     }
     private AuthenticationFilter getAuthenticationFiler() throws Exception {//필터 적용
        AuthenticationFilter authenticationFilter
-               = new AuthenticationFilter(authenticationManager()); //getAuthenticationFilerfmf 매니저가 관리
+               = new AuthenticationFilter(authenticationManager(),userService,env); //getAuthenticationFilerfmf 매니저가 관리
        return authenticationFilter;
     }
 
