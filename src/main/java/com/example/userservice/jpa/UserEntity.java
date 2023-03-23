@@ -20,4 +20,4 @@ public class UserEntity {
     private String name;
     @Column(nullable = false, unique = true) //null 허용 안함
     private String encrypedPwd;
-}
+}//도메인 객체
