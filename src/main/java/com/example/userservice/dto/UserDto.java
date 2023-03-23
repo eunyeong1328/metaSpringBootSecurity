@@ -14,6 +14,7 @@ public class UserDto {
     private String email;
     private String pwd;
     private String name;
+
     private  String encrypedPwd;
     private String decrypedPwd;
 }
