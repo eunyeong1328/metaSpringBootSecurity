@@ -31,9 +31,9 @@ public class UserServiceImpl implements UserService{
 
         UserEntity userEntity = mapper.map(userDto, UserEntity.class);
         userEntity.setEncrypedPwd(passwordEncoder.encode(userDto.getPwd())); //pw 암호화해서 pw들어감
-
+        System.out.println("db저장 전");
         userRepository.save(userEntity); //db저장
-
+        System.out.println("db저장 후");
         UserDto returnUserDto = mapper.map(userEntity, UserDto.class);//UserDto로 변환
         return returnUserDto;
     }

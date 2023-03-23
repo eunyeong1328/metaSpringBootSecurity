@@ -26,6 +26,7 @@ public class UserController {
 
         UserDto userDto = mapper.map(user, UserDto.class);
         userService.createUser(userDto);
+
         //회원가입한 내용을 확인하고 싶다
         ResponseUser responseUser = mapper.map(userDto, ResponseUser.class);
         return ResponseEntity.status(HttpStatus.CREATED).body(responseUser);
