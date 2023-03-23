@@ -75,6 +75,6 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Iterable<UserEntity> getUserByAll() {
-        return null;
+        return userRepository.findAll();
     }
 }

@@ -27,9 +27,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter { //security 관�
         http.csrf().disable();
         http.authorizeRequests().antMatchers("/users").permitAll();  //필요한 권한(users)만 풀기
         http.authorizeRequests().antMatchers("/h2-console/**").permitAll();
-
+        http.authorizeRequests().antMatchers("/error/**").permitAll();
+        http.authorizeRequests().antMatchers("/login").permitAll();
+//localhost와 같은 IP
         http.authorizeRequests().antMatchers("/**")//나머지 요청은
-                .hasIpAddress("localhost")//locahost로 찍히는
+                .hasIpAddress("127.0.0.1")//locahost로 찍히는
                 .and()
                 .addFilter(getAuthenticationFiler()); //인증하기 위한 준비를 한다.
         //getAuthenticationFiler 사전에 해야할 작업 filter로 등록
